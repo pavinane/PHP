@@ -21,4 +21,7 @@ Route::get('/', function () {
 //     return view('home');
 // });
 
-Route::get('/user',[UserController::class, 'index']);
+// Route::get('/pavi/{name}',[UserController::class, 'index']) ->name('pavi.index');
+
+Route::get('/home',[UserController::class,'index']) ->name('home.index');
+

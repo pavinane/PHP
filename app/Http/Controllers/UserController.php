@@ -8,20 +8,40 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     public function index ()
+    // public function index ($name)  /*$-passing the parameter*/
     {
+
         
+    /*DB fetch in Sql */  
     // DB::insert('insert into users (name,email,password) values (?,?, ?)',
-    //  ['nane', 'pavithranathan@gmail.com','nane97']);     DB fetch in Sql 
+    //  ['nane', 'pavithranathan@gmail.com','nane97']);     
         
-    //   $users= DB::select('select * from users');         /*DB in showing web page*/
+    /*DB in showing web page*/
+    //   $users= DB::select('select * from users');         
     //     return $users;
 
-    DB::update ('update users set name = ? where id =3',['pavinane']);  /* update the DB */
+    /* update the DB */
+    // DB::update ('update users set name = ? where id =3',['pavinane']); 
+      
+    /* delete for DB*/
+    // DB::delete('delete from users where id = 3');
+    // $users= DB::select('select * from users'); 
+    //  return $users;
+
+
         
-    $users= DB::select('select * from users'); 
-     return $users;
         
-        
-        return view ('home');
+    // return view ('home');
+
+    /*  using controllers  in web.php*/      
+    // return 'hi from user controler, Name :' .$name;
+        $name = 'pavinane';
+        $user =array(
+            "name" => "pavithranath Karmegan",
+            "email" => "pavimega77@gmail.com",
+            "phone" => "1234567890",
+
+        );
+        return view('home',compact('name','user'));
     }
 }
