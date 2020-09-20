@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,9 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/',[ProductController::class,'index']) -> name('product','index');
+
 // Route::get('/user', function () {
 //     return view('home');
 // });
@@ -25,3 +29,12 @@ Route::get('/', function () {
 
 Route::get('/home',[UserController::class,'index']) ->name('home.index');
 
+Route::get('/post',[ProductController::class,'getAllPost'])->name('post.getAllPost');
+
+Route::get('/post/{id}',[ProductController::class,'getPostById'])->name('post.getPostById');
+
+Route::get('/add-post',[ProductController::class,'addPost'])->name('post.addPost');
+
+Route::get('/update-post',[ProductController::class,'updatePost']);
+
+Route::get('/delete-post/{id}',[ProductController::class,'deletepost']);

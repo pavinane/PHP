@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
@@ -11,6 +12,7 @@ class UserController extends Controller
     // public function index ($name)  /*$-passing the parameter*/
     {
 
+        
         
     /*DB fetch in Sql */  
     // DB::insert('insert into users (name,email,password) values (?,?, ?)',
@@ -43,5 +45,7 @@ class UserController extends Controller
 
         );
         return view('home',compact('name','user'));
+
+    
     }
 }

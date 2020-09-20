@@ -12,4 +12,5 @@
    <p>Email:{{$user['email']}}</p>
    <p>Mobile Number:{{$user['phone']}}</p>
 </body>
-</html>
+</html>  
+\
