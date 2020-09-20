@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\FluentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,3 +38,5 @@ Route::get('/add-post',[ProductController::class,'addPost'])->name('post.addPost
 Route::get('/update-post',[ProductController::class,'updatePost']);
 
 Route::get('/delete-post/{id}',[ProductController::class,'deletepost']);
+
+Route::get('/fluent-string',[FluentController::class,'index'])->name('fluent.index');
