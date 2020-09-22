@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function index ()
+    public function index (Request $request)
     // public function index ($name)  /*$-passing the parameter*/
     {
 
@@ -37,15 +37,21 @@ class UserController extends Controller
 
     /*  using controllers  in web.php*/      
     // return 'hi from user controler, Name :' .$name;
-        $name = 'pavinane';
-        $user =array(
-            "name" => "pavithranath Karmegan",
-            "email" => "pavimega77@gmail.com",
-            "phone" => "1234567890",
 
-        );
-        return view('home',compact('name','user'));
+        // $name = 'pavinane';
+        // $user =array(
+        //     "name" => "pavithranath Karmegan",
+        //     "email" => "pavimega77@gmail.com",
+        //     "phone" => "1234567890",
 
-    
+        // );
+        // return view('home',compact('name','user'));
+
+        /* Request method */
+            
+        return $request->method(); // return method name
+    //  return $request->path();  return path name
+    //  return $request->url();  return url name
+    //  return $request->FullUrl(); 
     }
 }

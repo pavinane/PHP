@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FluentController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,3 +41,7 @@ Route::get('/update-post',[ProductController::class,'updatePost']);
 Route::get('/delete-post/{id}',[ProductController::class,'deletepost']);
 
 Route::get('/fluent-string',[FluentController::class,'index'])->name('fluent.index');
+
+Route::get('/login',[LoginController::class,'index'])->name('login.index');
+
+Route::post('/login',[LoginController::class,'loginSubmit'])->name('login.submit');
